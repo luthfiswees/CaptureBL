@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'dotenv'
+gem 'rake'
+gem 'rspec'
+gem 'selenium-webdriver'
+gem 'capybara'
+gem 'capybara-webkit'
+gem 'capybara-screenshot'
+gem 'percy-capybara'
