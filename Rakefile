@@ -10,24 +10,15 @@ begin
 
     # Task to initiate test
     task :test do
-        drivers = ["android", "firefox", "chrome", "safari", "opera"]
+        drivers = ["firefox", "chrome", "opera"]
         puts "Test start"
         
         drivers.each do |driver|
           ENV['CURRENT_DRIVER'] = driver
 
-          if driver == "opera" then
-            `(mv #{ENV["CHROMEDRIVER_DIR"]}/chromedriver #{ENV["CHROMEDRIVER_DIR"]}/cchromedriver)`
-            `(mv #{ENV["CHROMEDRIVER_DIR"]}/operadriver #{ENV["CHROMEDRIVER_DIR"]}/chromedriver)`
-          end
-
           Rake::Task['spec'].reenable
           Rake::Task['spec'].invoke
 
-          if driver == "opera" then
-            `(mv #{ENV['CHROMEDRIVER_DIR']}/chromedriver #{ENV['CHROMEDRIVER_DIR']}/operadriver)`
-            `(mv #{ENV['CHROMEDRIVER_DIR']}/cchromedriver #{ENV['CHROMEDRIVER_DIR']}/chromedriver)`
-          end
         end
     end
 

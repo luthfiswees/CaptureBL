@@ -9,8 +9,8 @@ when "safari"
     Capybara.default_driver = :selenium_safari
     Capybara.javascript_driver = :selenium_safari
 when "opera"
-    Capybara.default_driver = :selenium_chrome
-    Capybara.javascript_driver = :selenium_chrome
+    Capybara.default_driver = :selenium_opera
+    Capybara.javascript_driver = :selenium_opera
 when "android"
     Capybara.default_driver = :selenium_android
     Capybara.javascript_driver = :selenium_android
